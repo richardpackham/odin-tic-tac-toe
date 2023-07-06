@@ -41,27 +41,59 @@ const Gameboard = (() => {
 })();
 
 const displayController = (() => {
-    
-    const nameChange = (e) =>{
-        player = e.target.id
-        console.log(player)
-        const newName = prompt("New Name?")
+    let currentPlayer = ""
+    const nameChange = (newName) =>{
+        //const newName = prompt("New Name?")
+        //const newName = nameFormSubmit(e)
         if (newName == null || newName == ""){
             return false
         }
         console.log(newName)
-        if (player == "player1"){
+        if (currentPlayer == "player1"){
             game.updatePlayerName(game.player1,newName)
         }
-        else if (player == "player2"){
+        else if (currentPlayer == "player2"){
             game.updatePlayerName(game.player2,newName)
         }
+        hideForm()
+    }
+
+    const nameFormSubmit = (e) =>{
+        e.preventDefault()
+        console.log(e)
+        let formFields = e.target.elements
+        let newName = formFields.name.value
+        console.log(newName)
+        nameChange(newName)
+        let form = document.querySelector("#nameForm")
+        form.reset()
     }
     
+    const nameForm = document.querySelector(".nameForm")
+    nameForm.addEventListener("submit",nameFormSubmit)
+
+
+
+    const hideForm = () =>{
+        nameForm.classList.add("hide")
+    }
+
+    const close = document.querySelector("#close")
+    close.addEventListener("click",hideForm)
+
+    const showForm = (e) =>{
+        nameForm.classList.remove("hide")
+        player = e.target.id
+        console.log(player)
+        currentPlayer = player
+        console.log(`current player is ${currentPlayer}`)
+        
+    };
+    
     const player1 = document.querySelector("#player1")
-    player1.addEventListener("click",nameChange)
+    player1.addEventListener("click",showForm)
     const player2 = document.querySelector("#player2")
-    player2.addEventListener("click",nameChange)
+    player2.addEventListener("click",showForm)
 
     const restartGame = () =>{
         Gameboard.resetBoard()

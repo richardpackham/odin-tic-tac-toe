@@ -5,7 +5,7 @@
 }
 #boardWrapper {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3,minmax(100px,1fr));
     grid-template-rows: repeat(3, minmax(100px,1fr));
 }
 #boardWrapper > div {
@@ -13,4 +13,56 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.player{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.controls{
+    display:flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#wrapper{
+    max-width: 800px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.players, .controls, #boardWrapper{
+    margin-top: 20px;
+}
+
+.nameForm{
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    background-color: white;
+}
+#close{s
+    margin-bottom: 30px;
+}
+li{
+    list-style: none;
+    margin-bottom:20px
+}
+.hide{
+    display:none
 }

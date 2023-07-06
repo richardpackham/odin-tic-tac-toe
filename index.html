@@ -8,10 +8,30 @@
     <script src="script.js" defer="async"></script>
 </head>
 <body>
-    <div id="boardWrapper"></div>
-    <p id="message"></p>
-    <button id="reset">Reset</button>
-    <p id="player1Name"></p><button id="player1">Change Name</button>
-    <p id="player2Name"></p><button id="player2">Change Name</button>
+    <div id="wrapper">
+        <h1>Tic Tac Toe</h1>
+        <div class = "players">
+            <div class="player"><p>Player 1: </p><p id="player1Name"></p><button id="player1">Change Name</button></div>
+            <div class="player"><p>Player 2: </p><p id="player2Name"></p><button id="player2">Change Name</button></div>
+        </div>
+        <div id="boardWrapper"></div>
+        <div class = "controls">
+            <button id="reset">Reset</button>
+            <h3 id="message"></h3>
+        </div>
+    </div>
+    <div class="nameForm hide">
+        <button id="close">Close Form</button>
+
+        <form id="nameForm">
+            <li>
+                <label for="name">Name?</label>
+                <input type="text" name="name">
+            </li>
+            <li>
+                <input type="submit" name="submit" preventdefault>
+            </li>
+        </form>
+    </div>
 </body>
 </html>

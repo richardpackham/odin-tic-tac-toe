@@ -136,8 +136,8 @@ const displayController = (() => {
 })();
 
 const game = (() => {
-    const player1 = Player("Jim", "X")
-    const player2 = Player("Bob", "O")
+    const player1 = Player("Anon", "X")
+    const player2 = Player("Anon", "O")
 
     const updatePlayerName = (player, name) => {
         player.name = name

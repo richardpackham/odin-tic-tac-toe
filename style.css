@@ -3,3 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+#boardWrapper {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3, minmax(100px,1fr));
+}
+#boardWrapper > div {
+    border: solid 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
